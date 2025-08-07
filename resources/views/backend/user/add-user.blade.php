@@ -37,6 +37,9 @@
 						<div class="form-group">
 							<label>Employee name: </label>
 							<input type="text" name="name" class="form-control" required value="{{ old('name') }}" autocomplete="off">
+							@error('name')
+					            <div style="color: red;">{{ $message }}</div>
+					        @enderror
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -47,6 +50,9 @@
 								<option value="Male" @if(old('gender')=='Male') selected @endif>Male</option>
 								<option value="Female"  @if(old('gender')=='Female') selected @endif>Female</option>
 							</select> 
+							@error('gender')
+					            <div style="color: red;">{{ $message }}</div>
+					        @enderror
 						</div>
 					</div>
 				</div>
@@ -55,12 +61,18 @@
 						<div class="form-group">
 							<label>Email: </label>
 							<input type="email" name="email" class="form-control" value="{{ old('email') }}" required>
+							@error('email')
+					            <div style="color: red;">{{ $message }}</div>
+					        @enderror
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
 							<label>Mobile: </label>
 							<input type="text" name="mobile" class="form-control" value="{{ old('mobile') }}" maxlength="10" required>
+							@error('mobile')
+					            <div style="color: red;">{{ $message }}</div>
+					        @enderror
 						</div>
 					</div>
 				</div>
@@ -69,12 +81,18 @@
 						<div class="form-group">
 							<label>Designation: </label>
 							<input type="text" name="designation" class="form-control" value="{{ old('designation') }}" required>
+							@error('designation')
+					            <div style="color: red;">{{ $message }}</div>
+					        @enderror
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
 							<label>Joining Date: </label>
 							<input type="date" name="joining" class="form-control" autocomplete="off" value="{{ old('joining') }}" required>
+							@error('joining')
+					            <div style="color: red;">{{ $message }}</div>
+					        @enderror
 						</div>
 					</div>
 				</div>
@@ -84,7 +102,7 @@
 							<label>Status: </label>
 							<div class="form-group row">
 							  <div class="col-md-3">
-								<div class="form-check">
+								<div class="form-check">  
 								  <label class="form-check-label">
 									<input type="radio" class="form-check-input" name="status" value="1" checked>
 									Active
@@ -100,6 +118,9 @@
 								</div>
 							  </div>
 							</div>
+							@error('status')
+					            <div style="color: red;">{{ $message }}</div>
+					        @enderror
 						</div>
 					</div>
 				</div>

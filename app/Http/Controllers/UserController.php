@@ -67,12 +67,12 @@ class UserController extends Controller
                 'created_at' => date('Y-m-d H:i:s'),
             ]);
         $result = $user->save();
-        /*if($result){
+        if($result){
                 Session::flash('success', 'User created successfully!'); 
                 return redirect('users');
             }else{
                 Session::flash('error', 'Failed,Pleasy try latter!'); 
-            }*/
+            }
         return redirect()->route('users.index')->with('success', 'User created successfully.');
     }
 
@@ -112,12 +112,12 @@ class UserController extends Controller
             $user->status =  $request['status'];
             $user->updated_at = date('Y-m-d H:i:s');
             $result = $user-> update();
-            // if($result){
-            //     Session::flash('success', 'User updated successfully!'); 
-            //     return redirect('user');
-            // }else{
-            //     Session::flash('error', 'Updation failed,Pleasy try latter!'); 
-            // }
+            if($result){
+                Session::flash('success', 'User updated successfully!'); 
+                return redirect('user');
+            }else{
+                Session::flash('error', 'Updation failed,Pleasy try latter!'); 
+            }
 
         return redirect()->route('users.index')->with('success', 'User updated successfully.');
     }
