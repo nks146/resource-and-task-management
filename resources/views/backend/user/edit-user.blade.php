@@ -37,7 +37,10 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<label>Employee name: </label>
-							<input type="text" name="name" class="form-control" required value="{{ old('name') ? old('name'):$user->name }}" autocomplete="off">
+							<input type="text" name="name" class="form-control" required value="{{ old('name') ? old('name'):$user->name }}" autocomplete="off" required>
+							@error('name')
+					            <div style="color: red;">{{ $message }}</div>
+					        @enderror
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -46,8 +49,11 @@
 							<select name="gender" class="form-control" id="gender" required>
 								<option value="">Select Gender</option>
 								<option value="Male" @if($user->gender =='Male') selected @endif ">Male</option>
-						<option value="Female" @if($user->gender =='Female') selected @endif ">Female</option>
+								<option value="Female" @if($user->gender =='Female') selected @endif ">Female</option>
 							</select> 
+							@error('gender')
+					            <div style="color: red;">{{ $message }}</div>
+					        @enderror
 						</div>
 					</div>
 				</div>
@@ -56,12 +62,18 @@
 						<div class="form-group">
 							<label>Email: </label>
 							<input type="email" name="email" class="form-control" value="{{ old('email') ? old('email'):$user->email }}" required>
+							@error('email')
+					            <div style="color: red;">{{ $message }}</div>
+					        @enderror
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
 							<label>Mobile: </label>
 							<input type="text" name="mobile" class="form-control" value="{{ old('mobile') ? old('mobile'):$user->mobile }}" maxlength="10" required>
+							@error('mobile')
+					            <div style="color: red;">{{ $message }}</div>
+					        @enderror
 						</div>
 					</div>
 				</div>
@@ -70,12 +82,18 @@
 						<div class="form-group">
 							<label>Designation: </label>
 							<input type="text" name="designation" class="form-control" value="{{ old('designation') ? old('designation'):$user->designation }}" required>
+							@error('designation')
+					            <div style="color: red;">{{ $message }}</div>
+					        @enderror
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
 							<label>Joining Date: </label>
 							<input type="date" name="joining" class="form-control" autocomplete="off" value="{{ old('joining') ? old('joining'):date('Y-m-d', strtotime($user->joining_date)) }}" required>
+							@error('joining')
+					            <div style="color: red;">{{ $message }}</div>
+					        @enderror
 						</div>
 					</div>
 				</div>
@@ -101,6 +119,9 @@
 								</div>
 							  </div>
 							</div>
+							@error('status')
+					            <div style="color: red;">{{ $message }}</div>
+					        @enderror
 						</div>
 					</div>
 				</div>
