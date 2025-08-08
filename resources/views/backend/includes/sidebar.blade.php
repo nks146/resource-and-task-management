@@ -69,7 +69,7 @@
 
                     <ul class="nav nav-group-sub" data-submenu-title="Themes">
                         <li class="nav-item"><a href="{{ route('clients.index') }}" class="nav-link">Client List</a></li>
-                        <li class="nav-item"><a href="{{ route('clients.create') }}" class="nav-link">Material</a></li>
+                        <li class="nav-item"><a href="{{ route('clients.create') }}" class="nav-link">Add Client</a></li>
                     </ul>
                 </li>
                 <!--<li class="nav-item nav-item-submenu">

@@ -26,6 +26,7 @@ class User extends Authenticatable
         'mobile',
         'designation',
         'joining_date',
+        'location',
         'status',
         'created_at',
         'updated_at'
