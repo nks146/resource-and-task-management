@@ -69,11 +69,11 @@ class UserController extends Controller
         $result = $user->save();
         if($result){
                 Session::flash('success', 'User created successfully!'); 
-                return redirect('users');
+                return redirect()->route('users.index');
             }else{
                 Session::flash('error', 'Failed,Pleasy try latter!'); 
             }
-        return redirect()->route('users.index')->with('success', 'User created successfully.');
+        //return redirect()->route('users.index')->with('success', 'User created successfully.');
     }
 
     public function show(User $user)
@@ -114,12 +114,12 @@ class UserController extends Controller
             $result = $user-> update();
             if($result){
                 Session::flash('success', 'User updated successfully!'); 
-                return redirect('user');
+                return redirect()->route('users.index');
             }else{
                 Session::flash('error', 'Updation failed,Pleasy try latter!'); 
             }
 
-        return redirect()->route('users.index')->with('success', 'User updated successfully.');
+        //return redirect()->route('users.index')->with('success', 'User updated successfully.');
     }
 
     public function destroy(User $user)
