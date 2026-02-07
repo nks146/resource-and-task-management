@@ -56,6 +56,7 @@
                         </span>
                     </a>
                 </li>
+                @if(Auth::user()->role == 'admin')
                 <li class="nav-item nav-item-submenu">
                     <a href="#" class="nav-link"><i class="icon-copy"></i> <span>User</span></a>
 
@@ -72,6 +73,15 @@
                         <li class="nav-item"><a href="{{ route('clients.create') }}" class="nav-link">Add Client</a></li>
                     </ul>
                 </li>
+                <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="icon-color-sampler"></i> <span>Project</span></a>
+
+                    <ul class="nav nav-group-sub" data-submenu-title="Themes">
+                        <li class="nav-item"><a href="{{ route('projects.index') }}" class="nav-link">Project List</a></li>
+                        <li class="nav-item"><a href="{{ route('projects.create') }}" class="nav-link">Add Project</a></li>
+                    </ul>
+                </li>
+                @endif
                 <!--<li class="nav-item nav-item-submenu">
                     <a href="#" class="nav-link"><i class="icon-stack"></i> <span>Starter kit</span></a>
 
