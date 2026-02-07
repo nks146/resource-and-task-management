@@ -59,7 +59,7 @@ class UserController extends Controller
                 'role' => 'user',
                 'gender' => $request['gender'],
                 'email' => $request['email'],
-                'password' => Hash::make(Str::random(12)),
+                'password' => Hash::make(Str::random('12')),
                 'mobile' => $request['mobile'],
                 'designation' => $request['designation'],
                 'joining_date' => $request['joining'],
