@@ -81,6 +81,14 @@
                         <li class="nav-item"><a href="{{ route('projects.create') }}" class="nav-link">Add Project</a></li>
                     </ul>
                 </li>
+                 <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="icon-color-sampler"></i> <span>Activity</span></a>
+
+                    <ul class="nav nav-group-sub" data-submenu-title="Themes">
+                        <li class="nav-item"><a href="{{ route('activity_types.index') }}" class="nav-link">Activity List</a></li>
+                        <li class="nav-item"><a href="{{ route('activity_types.create') }}" class="nav-link">Add Activity</a></li>
+                    </ul>
+                </li>
                 @endif
                 <!--<li class="nav-item nav-item-submenu">
                     <a href="#" class="nav-link"><i class="icon-stack"></i> <span>Starter kit</span></a>
