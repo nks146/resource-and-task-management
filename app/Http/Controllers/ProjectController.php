@@ -65,7 +65,7 @@ class ProjectController extends Controller
             $result = $project->save();
             if($result){
                 Session::flash('success', 'Project created successfully!'); 
-                return redirect('project');
+                return redirect('projects');
             }else{
                 Session::flash('error', 'Failed,Pleasy try latter!'); 
             }
